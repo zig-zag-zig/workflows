@@ -1,4 +1,4 @@
-name: Keepalive
+name: Keepalive Repo By Pushing Empty Commits
 
 on:
   schedule:
