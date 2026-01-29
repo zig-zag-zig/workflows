@@ -1,0 +1,18 @@
+name: Random Daily Trigger Notify New Releases
+
+on:
+  schedule:
+    - cron: "0 15 * * *" # UTC
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait Random Time
+        run: |
+          random_delay=$((RANDOM % 1200))
+          echo "Waiting for $random_delay seconds..."
+          sleep $random_delay
+
+      - name: Call API
+        run: curl "${{ secrets.NOTIFY_URL }}"
