@@ -1,6 +1,9 @@
-name: Keepalivee
+name: Keepalive
 
 on:
+  schedule:
+    # Runs at 00:00 on the 1st of every month (safe within 60-day limit)
+    - cron: "0 0 1 * *"
   workflow_dispatch:
 
 permissions:
